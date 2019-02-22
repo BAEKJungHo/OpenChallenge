@@ -1,0 +1,15 @@
+<style>
+  body { background-color: aliceblue; }
+  h1 { color: brown; text-align: center; }
+  h3 { color: blue; text-shadow: 1px 1px 3px blue; }
+  p { font-size: 1em;
+      font-family: 휴먼편지체;
+      text-indent: 1em;
+   }
+  table {font-size: 13px;}
+  hr { border: 1px solid; }
+  ul { border: 1px dotted; }
+  a { text-decoration: none; color: blue; }
+  footer { background-color: orange; }
+  #square { border-radius: 20px 20px 20px 20px; }
+</style>
