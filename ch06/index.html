@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>오픈챌린지_백정호</title>
+  <script>
+    function printStar(value) {
+      if(parseInt(value) > 0) {
+        return value;
+      }
+      else{
+        return document.write("입력 오류입니다.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h3>별문자 출력하기</h3>
+  <hr>
+  <script>
+    var i, j, k=0;
+    var num = parseInt(prompt("정수를 입력하세요 :"));
+    printStar(num);
+    for(i=1; i<=num; i++){
+      for(j=0; j<i; j++){
+        document.write("*");
+      }
+      document.write("<br>");
+    }
+    for(i=num; i>0; i--){
+      if(i!=num){
+        for(k=i; k<num; k++)
+          document.write("&nbsp");
+      }
+      for(j=i; j>=1; j--){
+        document.write("*");
+      }
+      document.write("<br>");
+    }
+  </script>
+</body>
+</html>
