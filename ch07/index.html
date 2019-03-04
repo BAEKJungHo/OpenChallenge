@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>사용자가 입력한 것을 출력</title>
+  <script>
+    /* 버블정렬 이용 */
+    /* names.sort(); 이용하면 편리 */
+    function userInput() {
+      var str = prompt("문자열을 ','로 분리하여 입력하세요");
+      document.write(str);
+
+      var names = str.split(",");
+      var temp;
+      document.write("<br><hr>");
+
+      /* 버블 정렬 */
+      for(i=0; i<names.length-1; i++){
+        for(k=0; k<names.length-1-i; k++){
+          if(names[k] > names[k+1]){
+            temp = names[k];
+            names[k] = names[k+1];
+            names[k+1] = temp;
+          }
+        }
+      }
+
+      /* 중복 제거 */
+      for(m=0; m<names.length; m++){
+        for(p=0; p<names.length-1; p++){
+          if(names[p] == names[p+1]) {
+            document.write("<br><br>중복된 이름 : " + names[p] +"<br><hr>");
+            names.splice(p+1, 1);
+          }
+        }
+      }
+
+      document.write("정렬 후 : ");
+      for(n=0; n<names.length; n++){
+        document.write(names[n]+"&nbsp");
+      }
+      document.write("<br><hr>");
+
+      /* 카운트 변수 */
+      var sameCount = new Array(names.length);
+      for(v=0; v<sameCount.length; v++){
+        sameCount[v] = 1;
+      }
+
+      var duplicated;
+      var lastNames = new Array();
+      var lastCount = new Array();
+      lastNames[0] = names[0].charAt(0);
+      lastCount[0] = 1;
+      for (i=1; i<names.length; i++) {
+        duplicated = false;
+        for (k=0; k<lastNames.length; k++) {
+          if (names[i].charAt(0) == lastNames[k]) {
+            lastCount[k]++;
+            duplicated = true;
+            break;
+          }
+        }
+        if (!duplicated) {
+          lastNames[k] = names[i].charAt(0);
+          lastCount[k] = 1;
+        }
+      }
+      document.write("2) 입력한 이름중 성씨와 횟수<br>")
+      for (i=0; i<lastNames.length; i++)
+        document.write("&nbsp;&nbsp;&nbsp;" + lastNames[i] +
+                       " - " + lastCount[i] + "<br>");
+      document.write("<hr>")
+    }
+  </script>
+</head>
+<body>
+  <h3>사용자가 입력한 문자열을 출력</h3>
+  <hr>
+  <script>
+    userInput();
+  </script>
+</body>
+</html>
